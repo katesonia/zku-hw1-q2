@@ -16,6 +16,7 @@ contract ZkuHwNft is ERC721URIStorage {
 
     constructor() ERC721("ZkuHwNft", "ZKH") {}
 
+    // Mint nft to any address 'to' with a description string.
     function mint(address to, string memory description)
         public
         returns (uint256)
