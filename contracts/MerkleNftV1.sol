@@ -17,7 +17,7 @@ contract MerkleNftV1 is ERC721 {
     bytes32 public merkleRoot;
     bytes32[] public merkleLeaves;
 
-    constructor() ERC721("ZkuHwNft", "ZKH") {}
+    constructor() ERC721("MerkleNftV1", "MKL1") {}
 
     // Mint nft to any address 'to' with a description string.
     function mint(address to, string memory description)
@@ -88,7 +88,10 @@ contract MerkleNftV1 is ERC721 {
             leaves.length > 0,
             "cannot build merkle tree with empty leaves"
         );
+
         uint256 size = 1;
+        // Number of leaves for a smallest perfectly balanced binary tree that
+        // include the merkle leaves.
         while (size < leaves.length) {
             size *= 2;
         }

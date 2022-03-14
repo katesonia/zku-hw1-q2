@@ -20,7 +20,7 @@ contract MerkleNftV2 is ERC721 {
     // We keep this mapping in storage to add new leaf to Merkle tree with O(log(n)) time complexity.
     mapping(uint8 => bytes32) public nextLeftSiblings;
 
-    constructor() ERC721("ZkuHwNft", "ZKH") {}
+    constructor() ERC721("MerkleNftV2", "MKL2") {}
 
     // Mint nft to any address 'to' with a description string.
     function mint(address to, string memory description)
